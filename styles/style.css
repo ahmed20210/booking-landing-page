@@ -38,7 +38,6 @@ header {
   display: grid;
   width: 100%;
   padding: 0;
-  height: 110px;
   -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr);
   -ms-grid-rows: (auto)[11];
@@ -100,13 +99,13 @@ header .header li img {
 }
 
 header div {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 3;
-  grid-column: 2/5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1/5;
   -ms-grid-row: 4;
   -ms-grid-row-span: 5;
   grid-row: 4/9;
-  background-image: url(../image/logo.png);
+  padding-left: 20px;
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -121,6 +120,7 @@ header nav {
 }
 
 header nav ul {
+  padding: 10px 0;
   -ms-grid-column: 7;
       grid-column-start: 7;
   display: -webkit-box;
@@ -409,21 +409,43 @@ h1::after {
   .middle li {
     width: 40%;
   }
+  header nav ul {
+    padding-right: 20px;
+  }
+}
+
+.icons {
+  display: none;
 }
 
 @media (max-width: 768px) {
   header {
-    height: auto;
+    padding: 5px 10px;
+  }
+  header nav {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 6;
+    grid-row: 5/11;
+    -ms-grid-column: 13;
+    -ms-grid-column-span: -4;
+    grid-column: 13/9;
+    padding: 0;
+    padding-right: 50px;
+    position: relative;
   }
   header nav ul {
     display: none;
+    padding-right: 100px;
+  }
+  header nav ul li {
+    padding: 20px;
   }
   .icons {
+    position: absolute;
+    right: 0;
+    z-index: 1;
     color: #ffffff;
     display: block;
-    float: right;
-    margin-top: 5px;
-    margin-right: 5px;
   }
   .form {
     display: none;
